@@ -1,0 +1,13 @@
+@use 'sass:color';
+
+@mixin button-style($bg-color, $text-color) {
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  color: $text-color;
+
+  &:hover {
+    background-color: color.adjust($bg-color, $lightness: -10%);
+  }
+}

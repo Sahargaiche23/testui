@@ -1,0 +1,49 @@
+@use 'variables' as v; 
+@use 'mixins' as m;
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+  background-color: #f5f5f5; 
+  margin: 0;
+}
+
+
+.profile-card {
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 320px;
+  text-align: center;
+
+  .profile-img {
+    img {
+      width: 100%;
+      height: auto;
+      border-bottom: 3px solid v.$primary-color;
+    }
+  }
+
+  .profile-info {
+    padding: 20px;
+
+    h2 {
+      font-size: v.$heading-size;
+      color: v.$primary-color;
+      margin-bottom: 8px;
+    }
+
+    p {
+      font-size: v.$paragraph-size;
+      color: v.$text-color;
+      margin-bottom: 16px;
+    }
+
+    .btn-primary {
+      @include m.button-style(v.$primary-color, white);
+    }
+  }
+}
